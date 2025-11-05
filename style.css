@@ -1,0 +1,140 @@
+body {
+    
+    background-image: url('assets_baking/DSC_0036.JPG');
+
+    
+    background-size: cover;
+
+    
+    background-position: center;
+
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    
+    background-color: #cccccc;
+}
+
+.content {
+    color: white;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    max-width: 1100px;
+    margin: 30px auto 0; /* center horizontally, near the top */
+    box-sizing: border-box;
+  }
+body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    background-image: url('assets_baking/DSC_0036.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #cccccc;
+  
+    /* allow normal document flow */
+    display: block;
+  }
+
+  .carousel-container {
+    width: 30%;            /* or 40% if you prefer; try 60% for more centered look */
+    max-width: 900px;
+    height: 400px;
+    margin: 40px auto;     /* center horizontally and add vertical spacing */
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+.carousel-slide {
+    display: flex; /* Lines up images in a single row */
+    width: 400%; /* (Number of images * 100%) - 4 images = 400% */
+    height: 100%;
+    animation: slide-animation 20s infinite alternate linear; /* 4 images * 5s each = 20s */
+}
+
+.carousel-slide {
+    display: flex;
+    width: 400%; /* number of images * 100% */
+    height: 100%;
+    animation: slide-animation 20s infinite alternate linear;
+  }
+  .carousel-slide img {
+    width: calc(100% / 4);
+    height: 100%;
+    object-fit: cover;
+  }
+
+@keyframes slide-animation {
+    /* Adjust percentages based on the number of images (e.g., for 4 images) */
+    0%, 25% {
+        transform: translateX(0); /* Show image 1 */
+    }
+    25%, 50% {
+        transform: translateX(-25%); /* Show image 2 */
+    }
+    50%, 75% {
+        transform: translateX(-50%); /* Show image 3 */
+    }
+    75%, 100% {
+        transform: translateX(-75%); /* Show image 4 */
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+}
+.contact-info {
+    text-align: center;       /* centers the text/link */
+    margin: 40px 0 20px 0;    /* adds spacing above & below */
+  }
+  
+  .contact-info a {
+    color: #3b3449;  /* 💜 light purple example */
+    font-size: 1.2rem;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  .contact-info a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+  
+  .contact-info a:hover::after {
+    width: 100%;
+  }
+/* Links inside the content box */
+.content a {
+    color: white; /* or your purple if you prefer */
+    text-decoration: none;
+    position: relative;
+    font-weight: 600;
+  }
+  
+  .content a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: white; /* underline color */
+    transition: width 0.3s ease;
+  }
+  
+  .content a:hover::after {
+    width: 100%;
+  }
