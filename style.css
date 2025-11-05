@@ -1,20 +1,4 @@
-body {
-    
-    background-image: url('assets_baking/DSC_0036.JPG');
 
-    
-    background-size: cover;
-
-    
-    background-position: center;
-
-    
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    
-    
-    background-color: #cccccc;
-}
 
 .content {
     color: white;
@@ -25,65 +9,37 @@ body {
     margin: 30px auto 0; /* center horizontally, near the top */
     box-sizing: border-box;
   }
-body {
+  html, body {
+    height: 100%;
     margin: 0;
-    font-family: "Roboto", sans-serif;
+    padding: 0;
+  }
+  
+  /* This layer holds the background image and never moves */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('assets_baking/DSC_0036.JPG');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color: #cccccc;
+    z-index: -1; /* keeps it behind everything */
+  }
   
+  /* Optional – keep your normal text styling */
+  body {
+    font-family: "Roboto", sans-serif;
+    color: white;
+  }
     /* allow normal document flow */
     display: block;
   }
 
-  .carousel-container {
-    width: 30%;            /* or 40% if you prefer; try 60% for more centered look */
-    max-width: 900px;
-    height: 400px;
-    margin: 40px auto;     /* center horizontally and add vertical spacing */
-    overflow: hidden;
-    position: relative;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-.carousel-slide {
-    display: flex; /* Lines up images in a single row */
-    width: 400%; /* (Number of images * 100%) - 4 images = 400% */
-    height: 100%;
-    animation: slide-animation 20s infinite alternate linear; /* 4 images * 5s each = 20s */
-}
-
-.carousel-slide {
-    display: flex;
-    width: 400%; /* number of images * 100% */
-    height: 100%;
-    animation: slide-animation 20s infinite alternate linear;
-  }
-  .carousel-slide img {
-    width: calc(100% / 4);
-    height: 100%;
-    object-fit: cover;
-  }
-
-@keyframes slide-animation {
-    /* Adjust percentages based on the number of images (e.g., for 4 images) */
-    0%, 25% {
-        transform: translateX(0); /* Show image 1 */
-    }
-    25%, 50% {
-        transform: translateX(-25%); /* Show image 2 */
-    }
-    50%, 75% {
-        transform: translateX(-50%); /* Show image 3 */
-    }
-    75%, 100% {
-        transform: translateX(-75%); /* Show image 4 */
-    }
-}
+  
 
 a {
     text-decoration: none;
@@ -137,4 +93,200 @@ a {
   
   .content a:hover::after {
     width: 100%;
+  }
+  /* ===== Contact Page Card Layout ===== */
+.contact-container {
+    background-color: rgba(255, 255, 255, 0.9); /* off-white card */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    margin: 80px auto; /* centers horizontally + spacing from top */
+    text-align: center;
+    color: #222;
+  }
+  
+  .contact-container h1 {
+    margin-bottom: 10px;
+    color: #3b3449; /* purple-black tone */
+  }
+  
+  .contact-container p {
+    margin-bottom: 30px;
+    color: #444;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-form label {
+    text-align: left;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-color: #6b4eff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(107, 78, 255, 0.3);
+  }
+  
+  .contact-form button {
+    background-color: #6b4eff;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #4d36cc;
+  }
+  
+  /* Return link */
+  .return_link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .return_link a {
+    color: #6b4eff;
+    text-decoration: none;
+    position: relative;
+  }
+  
+  .return_link a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #6b4eff;
+    transition: width 0.3s ease;
+  }
+  
+  .return_link a:hover::after {
+    width: 100%;
+  }
+  .home-button {
+    display: inline-block;
+    background-color: #6b4eff; /* purple button */
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .home-button:hover {
+    background-color: #4d36cc; /* darker purple on hover */
+    transform: scale(1.05);
+  }
+  .home-button {
+    color: white !important;
+  }
+  .content-container {
+    background-color: rgba(255, 255, 255, 0.9); /* off-white card */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+    margin: 80px auto;
+    text-align: center;
+    color: #222;
+  }
+  
+  .content-container h1 {
+    color: #3b3449; /* purple-black tone */
+    margin-bottom: 10px;
+  }
+  
+  .content-container p {
+    color: #444;
+    margin-bottom: 30px;
+  }
+  
+  /* Buttons */
+  .home-btn {
+    display: inline-block;
+    background-color: #6b4eff; /* purple */
+    color: white;
+    padding: 12px 24px;
+    margin: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  
+  .home-btn:hover {
+    background-color: #4d36cc;
+  }
+  footer {
+    text-align: center;        /* centers text horizontally */
+    color: black;              /* makes the text white */
+    padding: 20px 0;           /* space above and below the text */
+    font-size: 0.9rem;         /* slightly smaller, subtle footer */
+  }
+  .carousel-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .carousel-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px; /* Add horizontal padding to prevent cut-off edges */
+  }
+  
+  .carousel img {
+    flex: 0 0 60%; /* smaller width per image — shows more previews */
+    max-width: 600px; /* prevents huge zooming */
+    height: 350px; /* consistent size */
+    object-fit: contain; /* shows entire image instead of cropping */
+    border-radius: 12px;
+    scroll-snap-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white; /* prevents gaps when aspect ratio differs */
+  }
+  
+  .carousel img:first-child {
+    margin-left: auto; /* centers the first image nicely */
+  }
+  
+  .carousel img:last-child {
+    margin-right: auto; /* centers the last image nicely */
+  }
+  
+  .carousel img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
   }
